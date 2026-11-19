@@ -1,0 +1,68 @@
+{
+  "name": "zkcg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "server": "node server/index.cjs",
+    "test:issuer": "node --test server/test/issuer.test.cjs server/test/deployment.test.cjs",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.cjs --network localhost",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test:local-chain": "node --test server/test/local-chain.test.cjs",
+    "test:browser": "node test-browser/local.cjs",
+    "deploy:sepolia": "hardhat run scripts/deploy.cjs --network sepolia",
+    "prebuild": "npm run compile",
+    "predev": "npm run compile",
+    "preserver": "npm run compile",
+    "pretest:issuer": "npm run compile",
+    "pretest:local-chain": "npm run compile",
+    "verify:sepolia": "hardhat run scripts/verify-sepolia.cjs --network sepolia",
+    "smoke:sepolia": "hardhat run scripts/smoke-sepolia.cjs --network sepolia",
+    "test:artifacts": "node test-browser/artifacts.cjs",
+    "test:artifacts:node": "node --test --test-force-exit server/test/proving-artifacts.test.cjs",
+    "fund:local": "node scripts/fund-local.cjs",
+    "keystore:create": "node scripts/create-issuer-keystore.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minhcardanian/zkCG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Minhcardanian/zkCG/issues"
+  },
+  "homepage": "https://github.com/Minhcardanian/zkCG#readme",
+  "dependencies": {
+    "@semaphore-protocol/contracts": "4.14.2",
+    "@semaphore-protocol/core": "4.14.2",
+    "ethers": "6.13.5",
+    "express": "4.22.3",
+    "pg": "8.13.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "3.0.8",
+    "@nomicfoundation/hardhat-verify": "2.1.4",
+    "@types/react": "18.3.20",
+    "@types/react-dom": "18.3.6",
+    "chai": "4.5.0",
+    "hardhat": "2.26.3",
+    "playwright": "1.56.1",
+    "supertest": "7.2.2",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
+  },
+  "private": true,
+  "overrides": {
+    "underscore@1.13.6": "1.13.8"
+  }
+}

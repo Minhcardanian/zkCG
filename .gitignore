@@ -1,0 +1,13 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+
+deployments/
+
+*.keystore.json
